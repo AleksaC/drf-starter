@@ -1,0 +1,43 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:12.1-alpine
+    environment:
+      - POSTGRES_PASSWORD=test
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./project/sql/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
+    restart: unless-stopped
+
+  redis:
+    image: redis:6.0-rc-alpine
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+
+  api:
+    <<: &api
+      build:
+        context: project
+        dockerfile: dev.Dockerfile
+      image: project-api
+      environment:
+        - DB_HOST=db
+        - REDIS_URL=redis://redis/0
+        - DJANGO_SETTINGS_MODULE=server.settings.dev
+      volumes:
+        - ./project:/app/project
+      depends_on:
+        - db
+        - redis
+    ports:
+      - "8000:8000"
+
+  celery:
+    <<: *api
+    command: celery -A server worker --beat -l info
+
+volumes:
+  db-data:
+  redis-data:

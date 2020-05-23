@@ -1,0 +1,100 @@
+version: 2.1
+
+jobs:
+  test:
+    working_directory: ~/project/project
+
+    docker:
+      - image: circleci/python:3.8.2
+        environment:
+          - DB_USER=postgres
+          - DB_PASSWORD=circle_test
+      - image: circleci/postgres:12.1-alpine-ram
+      - image: circleci/redis:6.0-rc-alpine
+
+    steps:
+      - checkout:
+          path: ~/project
+      - restore_cache:
+          keys:
+            - deps-{{ .Branch }}-{{ checksum "requirements-dev.txt" }}
+      - run:
+          name: install_requirements
+          command: |
+            python3 -m venv venv
+            source venv/bin/activate
+            pip install -r requirements-dev.txt
+      - save_cache:
+          key: deps-{{ .Branch }}-{{ checksum "requirements-dev.txt" }}
+          paths:
+            - venv
+      - run:
+          name: run_tests
+          command: |
+            source venv/bin/activate
+            coverage run manage.py test --settings=server.settings.test
+            coveralls
+            coverage html
+      - store_artifacts:
+          path: htmlcov
+
+  pre-commit:
+    working_directory: ~/project
+
+    docker:
+      - image: circleci/python:3.8.2
+
+    environment:
+      BASE_REV: << pipeline.git.base_revision >>
+      CURR_REV: << pipeline.git.revision >>
+
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "c5:47:64:d2:4a:9b:bb:05:e5:13:39:2d:d3:dd:4b:cd"
+      - checkout
+      - restore_cache:
+          keys:
+            - pre-commit-{{ .Branch }}-{{ checksum ".pre-commit-config.yaml" }}
+      - run:
+          name: install_pre-commit
+          command: |
+            python3 -m venv venv
+            source venv/bin/activate
+            pip install pre-commit
+      - run:
+          name: pre-commit
+          command: |
+            source venv/bin/activate
+            pre-commit install
+            if [ $BASE_REV = "<nil>" ];
+            then
+              pre-commit run --all-files
+            else
+              pre-commit run --files $(git diff --name-only $BASE_REV $CURR_REV)
+            fi
+      - save_cache:
+          key: pre-commit-{{ .Branch }}-{{ checksum ".pre-commit-config.yaml" }}
+          paths:
+            - ~/.cache/pre-commit
+            - venv
+          when: always
+      - run:
+          name: push_back
+          command: |
+            if ! git diff-index --quiet HEAD --;
+            then
+              git config --global user.name "CircleCI"
+              git add .
+              git commit --no-verify -m "${CIRCLE_JOB} fixes ${CIRCLE_BUILD_URL} [skip ci]"
+              git remote set-url origin $CIRCLE_REPOSITORY_URL > /dev/null 2>&1
+              git push origin HEAD:${CIRCLE_BRANCH}
+            fi
+          when: on_fail
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - test
+      - pre-commit

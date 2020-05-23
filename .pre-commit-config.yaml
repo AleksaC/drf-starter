@@ -1,0 +1,42 @@
+default_language_version:
+  python: python3.8
+repos:
+  - repo: https://github.com/ambv/black
+    rev: 19.10b0
+    hooks:
+      - id: black
+        exclude: ".*/migrations/.*"
+        args: ["--line-length=91"]
+
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.0a2
+    hooks:
+      - id: flake8
+
+  - repo: https://github.com/asottile/seed-isort-config
+    rev: v2.1.1
+    hooks:
+      - id: seed-isort-config
+
+  - repo: https://github.com/timothycrosley/isort
+    rev: 4.3.21
+    hooks:
+      - id: isort
+        exclude: |
+          (?x)(
+            ^.*/migrations/.*|
+            ^project/server/__init__.py
+          )
+
+  - repo: https://github.com/AleksaC/poetry-requirements-sync-hook
+    rev: master
+    hooks:
+      - id: poetry-requirements-sync
+        args: [--dev, --without-hashes, --auto-add]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
