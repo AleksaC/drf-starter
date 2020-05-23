@@ -2,7 +2,7 @@
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/AleksaC/drf-starter/blob/master/LICENSE)
 [![drf-starter](https://circleci.com/gh/AleksaC/drf-starter.svg?style=svg)](https://circleci.com/gh/AleksaC/drf-starter)
-[![Coverage Status](https://coveralls.io/repos/github/AleksaC/drf-starter/badge.svg?branch=master&t=7uJXsb)](https://coveralls.io/github/AleksaC/drf-starter?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/AleksaC/drf-starter/badge.svg?branch=master&t=sEMXG5)](https://coveralls.io/github/AleksaC/drf-starter?branch=master)
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/AleksaC/drf-starter/blob/master/.pre-commit-config.yaml)
 
