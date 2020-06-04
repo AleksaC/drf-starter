@@ -21,7 +21,7 @@ jobs:
       - run:
           name: install_requirements
           command: |
-            python3 -m venv venv
+            virtualenv venv -p python3
             source venv/bin/activate
             pip install -r requirements-dev.txt
       - save_cache:
@@ -59,7 +59,7 @@ jobs:
       - run:
           name: install_pre-commit
           command: |
-            python3 -m venv venv
+            virtualenv venv -p python3
             source venv/bin/activate
             pip install pre-commit
       - run:
