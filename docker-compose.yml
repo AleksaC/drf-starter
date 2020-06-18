@@ -11,7 +11,7 @@ services:
     restart: unless-stopped
 
   redis:
-    image: redis:6.0-rc-alpine
+    image: redis:6.0.5-alpine
     volumes:
       - redis-data:/data
     restart: unless-stopped
