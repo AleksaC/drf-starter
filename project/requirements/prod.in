@@ -1,0 +1,13 @@
+django
+psycopg2
+djangorestframework
+django-redis
+gunicorn
+django-health-check
+djangorestframework-simplejwt
+django-celery-beat
+django-celery-results
+django-cors-headers
+django-storages
+boto3
+django-anymail[mailgun]

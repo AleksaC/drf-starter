@@ -1,0 +1,25 @@
+[coverage:run]
+branch = true
+source = project
+
+omit =
+    */migrations/*
+    */settings/*
+    */wsgi.py
+    */asgi.py
+    manage.py
+    */tests/*
+    */venv/*
+
+[coverage:report]
+fail_under = 100
+show_missing = true
+skip_covered = true
+
+exclude_lines =
+    pragma: no cover
+    except ImportError
+    raise ImportError
+    raise AssertionError
+    raise NotImplementedError
+    if settings.DEBUG

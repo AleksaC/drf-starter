@@ -28,12 +28,6 @@ repos:
             ^project/server/__init__.py
           )
 
-  - repo: https://github.com/AleksaC/poetry-requirements-sync-hook
-    rev: master
-    hooks:
-      - id: poetry-requirements-sync
-        args: [--dev, --without-hashes, --auto-add]
-
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.5.0
     hooks:

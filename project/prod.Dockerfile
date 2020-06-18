@@ -15,7 +15,7 @@ RUN python -m venv /venv
 
 ENV PATH="/venv/bin:$PATH"
 
-COPY requirements.txt .
+COPY requirements/prod.txt requirements.txt
 
 RUN pip install --no-cache-dir --disable-pip-version-check -r requirements.txt
 

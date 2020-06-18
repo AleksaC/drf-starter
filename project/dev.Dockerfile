@@ -10,9 +10,9 @@ RUN apk update && apk add --no-cache \
 
 WORKDIR /app/project
 
-COPY requirements-dev.txt .
+COPY requirements/dev.txt requirements.txt
 
-RUN pip install --no-cache-dir --disable-pip-version-check -r requirements-dev.txt
+RUN pip install --no-cache-dir --disable-pip-version-check -r requirements.txt
 
 COPY . .
 

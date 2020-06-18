@@ -1,0 +1,4 @@
+-r test.txt
+django-debug-toolbar
+drf-yasg
+pre-commit

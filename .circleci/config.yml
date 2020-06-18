@@ -17,15 +17,15 @@ jobs:
           path: ~/project
       - restore_cache:
           keys:
-            - deps-{{ .Branch }}-{{ checksum "requirements-dev.txt" }}
+            - deps-{{ .Branch }}-{{ checksum "requirements/test.txt" }}
       - run:
           name: install_requirements
           command: |
             virtualenv venv -p python3
             source venv/bin/activate
-            pip install -r requirements-dev.txt
+            pip install -r requirements/test.txt
       - save_cache:
-          key: deps-{{ .Branch }}-{{ checksum "requirements-dev.txt" }}
+          key: deps-{{ .Branch }}-{{ checksum "requirements/test.txt" }}
           paths:
             - venv
       - run:
