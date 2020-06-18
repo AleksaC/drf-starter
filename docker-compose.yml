@@ -34,9 +34,12 @@ services:
     ports:
       - "8000:8000"
 
-  celery:
+  celery-worker:
     <<: *api
-    command: celery -A server worker --beat -l info
+    command: celery -A server worker -l info
+  celery-beat-scheduler:
+    <<: *api
+    command: celery -A server beat -l info --pidfile=
 
 volumes:
   db-data:
