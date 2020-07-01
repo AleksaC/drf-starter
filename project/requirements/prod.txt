@@ -68,9 +68,9 @@ django-timezone-field==4.0 \
     --hash=sha256:758b7d41084e9ea2e89e59eb616e9b6326e6fbbf9d14b6ef062d624fe8cc6246 \
     --hash=sha256:7e3620fe2211c2d372fad54db8f86ff884098d018d56fda4dca5e64929e05ffc \
     # via django-celery-beat
-django==3.0.7 \
-    --hash=sha256:5052b34b34b3425233c682e0e11d658fd6efd587d11335a0203d827224ada8f2 \
-    --hash=sha256:e1630333248c9b3d4e38f02093a26f1e07b271ca896d73097457996e0fae12e8 \
+django==3.0.8 \
+    --hash=sha256:31a5fbbea5fc71c99e288ec0b2f00302a0a92c44b13ede80b73a6a4d6d205582 \
+    --hash=sha256:5457fc953ec560c5521b41fad9e6734a4668b7ba205832191bbdff40ec61073c \
     # via -r requirements/prod.in, django-anymail, django-celery-beat, django-cors-headers, django-health-check, django-redis, django-storages, django-timezone-field, djangorestframework, djangorestframework-simplejwt
 djangorestframework-simplejwt==4.4.0 \
     --hash=sha256:288ee78618d906f26abf6282b639b8f1806ce1d9a7578897a125cf79c609f259 \
