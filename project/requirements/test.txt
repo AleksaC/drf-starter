@@ -72,9 +72,9 @@ coverage==5.2 \
     --hash=sha256:ed9a21502e9223f563e071759f769c3d6a2e1ba5328c31e86830368e8d78bc9c \
     --hash=sha256:f50632ef2d749f541ca8e6c07c9928a37f87505ce3a9f20c8446ad310f1aa87b \
     # via -r requirements/test.in, coveralls
-coveralls==2.0.0 \
-    --hash=sha256:41bd57b60321dfd5b56e990ab3f7ed876090691c21a9e3b005e1f6e42e6ba4b9 \
-    --hash=sha256:d213f5edd49053d03f0db316ccabfe17725f2758147afc9a37eaca9d8e8602b5 \
+coveralls==2.1.1 \
+    --hash=sha256:3726d35c0f93a28631a003880e2aa6cc93c401d62bc6919c5cb497217ba30c55 \
+    --hash=sha256:afe359cd5b350e1b3895372bda32af8f0260638c7c4a31a5c0f15aa6a96f40d9 \
     # via -r requirements/test.in
 django-anymail[mailgun]==7.1.0 \
     --hash=sha256:7af1076f383fb3b62b301949ea8f7d87a41376015309ffc35a246a1726060429 \
