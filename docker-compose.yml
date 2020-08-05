@@ -37,6 +37,7 @@ services:
   celery-worker:
     <<: *api
     command: celery -A server worker -l info
+
   celery-beat-scheduler:
     <<: *api
     command: celery -A server beat -l info --pidfile=
