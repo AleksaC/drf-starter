@@ -8,9 +8,9 @@ amqp==2.6.0 \
     --hash=sha256:24dbaff8ce4f30566bb88976b398e8c4e77637171af3af6f1b9650f48890e60b \
     --hash=sha256:bb68f8d2bced8f93ccfd07d96c689b716b3227720add971be980accfc2952139 \
     # via -r requirements/prod.txt, kombu
-asgiref==3.2.9 \
-    --hash=sha256:7ea1922cfd63c4ac7687069f8bb0e7768ab9b7fc78ff227577d4240b52d6cb7a \
-    --hash=sha256:f803d8b4962cc338d48a72fa498c52f913b160eb16712e2ecdf2a81904daead9 \
+asgiref==3.2.10 \
+    --hash=sha256:7e51911ee147dd685c3c8b805c0ad0cb58d360987b56953878f8c06d2d1c6f1a \
+    --hash=sha256:9fc6fb5d39b8af147ba40765234fa822b39818b12cc80b35ad9b0cef3a476aed \
     # via -r requirements/prod.txt, django
 billiard==3.6.3.0 \
     --hash=sha256:bff575450859a6e0fbc2f9877d9b715b0bbc07c3565bb7ed2280526a0cdf5ede \
@@ -108,9 +108,9 @@ django-timezone-field==4.0 \
     --hash=sha256:758b7d41084e9ea2e89e59eb616e9b6326e6fbbf9d14b6ef062d624fe8cc6246 \
     --hash=sha256:7e3620fe2211c2d372fad54db8f86ff884098d018d56fda4dca5e64929e05ffc \
     # via -r requirements/prod.txt, django-celery-beat
-django==3.0.8 \
-    --hash=sha256:31a5fbbea5fc71c99e288ec0b2f00302a0a92c44b13ede80b73a6a4d6d205582 \
-    --hash=sha256:5457fc953ec560c5521b41fad9e6734a4668b7ba205832191bbdff40ec61073c \
+django==3.1 \
+    --hash=sha256:1a63f5bb6ff4d7c42f62a519edc2adbb37f9b78068a5a862beff858b68e3dc8b \
+    --hash=sha256:2d390268a13c655c97e0e2ede9d117007996db692c1bb93eabebd4fb7ea7012b \
     # via -r requirements/prod.txt, django-anymail, django-celery-beat, django-cors-headers, django-health-check, django-redis, django-storages, django-timezone-field, djangorestframework, djangorestframework-simplejwt
 djangorestframework-simplejwt==4.4.0 \
     --hash=sha256:288ee78618d906f26abf6282b639b8f1806ce1d9a7578897a125cf79c609f259 \
