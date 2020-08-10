@@ -27,8 +27,6 @@ CONN_MAX_AGE = os.environ.get("DB_CONN_MAX_AGE")
 DATABASES["default"]["CONN_MAX_AGE"] = (
     CONN_MAX_AGE if CONN_MAX_AGE is None else int(CONN_MAX_AGE)
 )
-# Remove if not using PgBouncer with transaction pool_mode
-DISABLE_SERVER_SIDE_CURSORS = True
 
 
 # Storages

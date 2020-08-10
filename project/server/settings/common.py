@@ -93,6 +93,10 @@ WSGI_APPLICATION = "server.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+DISABLE_SERVER_SIDE_CURSORS = (
+    os.environ.get("DB_DISABLE_SERVER_SIDE_CURSORS", "True") == "True"
+)  # Should be set to False if PgBouncer isn't used with transaction pool_mode
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
@@ -101,6 +105,7 @@ DATABASES = {
         "PASSWORD": os.environ.get("DB_PASSWORD", "test"),
         "HOST": os.environ.get("DB_HOST", "localhost"),
         "PORT": os.environ.get("DB_PORT", "5432"),
+        "DISABLE_SERVER_SIDE_CURSORS": DISABLE_SERVER_SIDE_CURSORS,
     }
 }
 
