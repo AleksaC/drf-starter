@@ -3,7 +3,7 @@ default_language_version:
 
 repos:
   - repo: https://github.com/ambv/black
-    rev: 19.10b0
+    rev: stable
     hooks:
       - id: black
         exclude: ".*/migrations/.*"
@@ -14,19 +14,13 @@ repos:
     hooks:
       - id: flake8
 
-  - repo: https://github.com/asottile/seed-isort-config
-    rev: v2.1.1
-    hooks:
-      - id: seed-isort-config
-
   - repo: https://github.com/timothycrosley/isort
-    rev: 4.3.21
+    rev: 5.3.2
     hooks:
       - id: isort
         exclude: |
           (?x)(
-            ^.*/migrations/.*|
-            ^project/server/__init__.py
+            ^.*/migrations/.*
           )
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
