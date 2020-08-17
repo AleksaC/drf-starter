@@ -16,13 +16,13 @@ billiard==3.6.3.0 \
     --hash=sha256:bff575450859a6e0fbc2f9877d9b715b0bbc07c3565bb7ed2280526a0cdf5ede \
     --hash=sha256:d91725ce6425f33a97dfa72fb6bfef0e47d4652acd98a032bd1a7fbf06d5fa6a \
     # via -r requirements/prod.txt, celery
-boto3==1.14.35 \
-    --hash=sha256:cbafcae500bbffcf723c6b34bfede0eb5bb04cf41788fc732ce95d08fcf90a62 \
-    --hash=sha256:df19f35e2d73e77c72f756f98805785f45dd26c608b704b105e9f8fec6992c1e \
+boto3==1.14.43 \
+    --hash=sha256:640a8372ce0edfbb84a8f63584a0b64c78d61a751a27c2a47f92d2ebaf021ce4 \
+    --hash=sha256:a6c9a3d3abbad2ff2e5751af599492a9271633a7c9fef343482524464c53e451 \
     # via -r requirements/prod.txt
-botocore==1.17.35 \
-    --hash=sha256:0f69698a59e7829d34851ea5025338bddc4352300ba7df619842eac173bc4a4e \
-    --hash=sha256:8b55eb0d5ea82e383649eca3129ae0979781a97ac51c0375dfcb300178e5f2fb \
+botocore==1.17.43 \
+    --hash=sha256:3fb144d2b5d705127f394f7483737ece6fa79577ca7c493e4f42047ac8636200 \
+    --hash=sha256:f8801ce7f7603922ccab1c86c448e802f94183e31d99457e85fb9985a20d3abc \
     # via -r requirements/prod.txt, boto3, s3transfer
 celery==4.4.5 \
     --hash=sha256:c3f4173f83ceb5a5c986c5fdaefb9456de3b0729a72a5776e46bd405fda7b647 \
