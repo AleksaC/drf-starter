@@ -186,9 +186,15 @@ LOGGING = {
             "datefmt": "%Y-%b-%d %H:%M:%S",
         },
     },
-    "filters": {"require_debug_false": {"()": "django.utils.log.RequireDebugFalse",},},
+    "filters": {
+        "require_debug_false": {
+            "()": "django.utils.log.RequireDebugFalse",
+        },
+    },
     "handlers": {
-        "null": {"class": "logging.NullHandler",},
+        "null": {
+            "class": "logging.NullHandler",
+        },
         "console": {
             "level": "INFO",
             "formatter": "simple",
@@ -204,7 +210,11 @@ LOGGING = {
             "include_html": True,
         },
     },
-    "root": {"handlers": ["console"], "level": "WARNING", "propagate": False,},
+    "root": {
+        "handlers": ["console"],
+        "level": "WARNING",
+        "propagate": False,
+    },
     "loggers": {
         **{app: deepcopy(DEFAULT_APP_LOGGER) for app in FIRST_PARTY_APPS},
         "django.request": {

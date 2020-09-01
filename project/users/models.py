@@ -8,5 +8,7 @@ class User(AbstractUser):
         _("email address"),
         unique=True,
         blank=False,
-        error_messages={"unique": ("A user with that email already exists."),},
+        error_messages={
+            "unique": _("A user with that email already exists."),
+        },
     )
