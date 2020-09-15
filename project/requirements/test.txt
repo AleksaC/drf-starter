@@ -100,9 +100,9 @@ django-redis==4.12.1 \
     --hash=sha256:1133b26b75baa3664164c3f44b9d5d133d1b8de45d94d79f38d1adc5b1d502e5 \
     --hash=sha256:306589c7021e6468b2656edc89f62b8ba67e8d5a1c8877e2688042263daa7a63 \
     # via -r requirements/prod.txt
-django-storages==1.10 \
-    --hash=sha256:1e37da57678e6cf1e9914f84099a305323e4e1f261afe54fdb703cae7aa6fbc3 \
-    --hash=sha256:36ed8dab33d761954498189592ce005920095fcbc02dab4184eb51393c370991 \
+django-storages==1.10.1 \
+    --hash=sha256:12de8fb2605b9b57bfaf54b075280d7cbb3b3ee1ca4bc9b9add147af87fe3a2c \
+    --hash=sha256:652275ab7844538c462b62810276c0244866f345878256a9e0e86f5b1283ae18 \
     # via -r requirements/prod.txt
 django-timezone-field==4.0 \
     --hash=sha256:758b7d41084e9ea2e89e59eb616e9b6326e6fbbf9d14b6ef062d624fe8cc6246 \
