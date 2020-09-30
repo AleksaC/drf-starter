@@ -43,10 +43,6 @@ jobs:
     docker:
       - image: circleci/python:3.8.2
 
-    environment:
-      BASE_REV: << pipeline.git.base_revision >>
-      CURR_REV: << pipeline.git.revision >>
-
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -65,13 +61,7 @@ jobs:
           name: pre-commit
           command: |
             source venv/bin/activate
-            pre-commit install
-            if [ $BASE_REV = "<nil>" ];
-            then
-              pre-commit run --all-files
-            else
-              pre-commit run --files $(git diff --name-only $BASE_REV $CURR_REV)
-            fi
+            pre-commit run --all-files
       - save_cache:
           key: pre-commit-{{ .Branch }}-{{ checksum ".pre-commit-config.yaml" }}
           paths:
@@ -81,12 +71,12 @@ jobs:
       - run:
           name: push_back
           command: |
-            if ! git diff-index --quiet HEAD --;
+            if git status --porcelain . | grep -q .;
             then
               git config --global user.name "CircleCI"
               git remote set-url origin $CIRCLE_REPOSITORY_URL &> /dev/null
               git add .
-              git commit --no-verify -m "${CIRCLE_JOB} fixes ${CIRCLE_BUILD_URL} [skip ci]"
+              git commit --no-verify -m "${CIRCLE_JOB} fixes ${CIRCLE_BUILD_URL}"
               git pull --rebase origin "${CIRCLE_BRANCH}"
               git push origin "HEAD:${CIRCLE_BRANCH}"
             fi
