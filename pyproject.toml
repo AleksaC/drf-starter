@@ -1,0 +1,3 @@
+[tool.black]
+line-length = 91
+exclude = "migrations"
