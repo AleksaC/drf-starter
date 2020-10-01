@@ -1,0 +1,5 @@
+[flake8]
+accept-encodings = utf-8
+ignore = E203, E231, E501, F405, W503
+exclude = */migrations/*, .git, __pycache__, venv, .eggs, *.egg
+max-complexity = 10
