@@ -92,9 +92,9 @@ django-cors-headers==3.5.0 \
     --hash=sha256:9322255c296d5f75089571f29e520c83ff9693df17aa3cf9f6a4bea7c6740169 \
     --hash=sha256:db82b2840f667d47872ae3e4a4e0a0d72fbecb42779b8aa233fa8bb965f7836a \
     # via -r requirements/prod.txt
-django-health-check==3.14.1 \
-    --hash=sha256:08706f3b7a36b1690381779880b357c8d26d0b05109425eb891febd08993bbf1 \
-    --hash=sha256:19a136e2da4bad473e29e0f12f866f33d80b3d778b959290e09617738539c0bc \
+django-health-check==3.14.2 \
+    --hash=sha256:77ec42dd5ee2cad0ebc4ce14c7974938499de6171e40052d4b6cddffac61955b \
+    --hash=sha256:fcfcdaf255308351aaf296398012d7928c9d6033232d9884c3719f3742409d40 \
     # via -r requirements/prod.txt
 django-redis==4.12.1 \
     --hash=sha256:1133b26b75baa3664164c3f44b9d5d133d1b8de45d94d79f38d1adc5b1d502e5 \
